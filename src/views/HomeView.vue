@@ -1,18 +1,30 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>Trendy</h1>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import {mapFields} from "vuex-map-fields"
+import {mapActions} from "vuex"
 
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld
+    
+  },
+  computed: {
+    ...mapFields("collections", {
+      collection: "collection",
+    }),
+  },
+  methods: {
+    ...mapActions({
+      getTenorTrendy: "trends/retrieveCollection",
+    })
+  },
+  mounted() {
+    this.getTenorTrendy()
   }
 }
 </script>
