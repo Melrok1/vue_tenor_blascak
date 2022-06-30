@@ -6,6 +6,7 @@ export default {
   namespaced: true,
   state: {
     collectionsTest: 'collections_test',
+    collection: null
   },
   actions,
   getters: {
