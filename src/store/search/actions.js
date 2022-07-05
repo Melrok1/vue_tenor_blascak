@@ -7,7 +7,6 @@ export const retrieveCollection = ({ commit }, searchTerm = '') => {
     let getRequest = axios.get(trendyEndpoint);
 
     getRequest.then((response) => {
-        console.log('Taham hľadanú kolekciu', response)
         commit('SAVE_FOUND_COLLECTION', response)
     }).catch((e) => {
         console.log(e.message)
