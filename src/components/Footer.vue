@@ -5,7 +5,7 @@
                 &copy; Martin Blaščák 2022 
             </span> 
             <span>
-                martin.blascak@gmail.com
+                martin.blascak86@gmail.com
             </span>
         </p>
     </div>
