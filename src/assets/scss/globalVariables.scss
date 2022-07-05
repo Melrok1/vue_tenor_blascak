@@ -1,0 +1,22 @@
+$primary_color: #eeeeee;
+$secondary_color: #5c1272;
+
+
+$shadowColor: #aeaeae;
+$globalBoxShadow : 0px 2px 7px 0px $shadowColor;
+
+
+$linkColor: rgb(167, 167, 167);
+$linkColor_active: #ffffff;
+
+$navbarHeight: 70px;
+
+body {
+    background: $primary_color;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
