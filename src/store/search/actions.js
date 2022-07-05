@@ -1,7 +1,5 @@
 import axios from "axios"
 
-
-
 export const retrieveCollection = ({ commit }, searchTerm = '') => {
 
     let trendyEndpoint = `https://g.tenor.com/v1/search?q=${searchTerm}&key=LIVDSRZULELA&limit=50&media_filter=gif`

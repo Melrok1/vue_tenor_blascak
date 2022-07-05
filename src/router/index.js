@@ -6,21 +6,21 @@ import SearchView from '@/views/SearchView.vue'
 Vue.use(VueRouter)
 
 const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/search',
-    name: 'search',
-    component: SearchView
-  }
+	{
+		path: '/',
+		name: 'home',
+		component: HomeView
+	},
+	{
+		path: '/search',
+		name: 'search',
+		component: SearchView
+	}
 ]
 
 const router = new VueRouter({
-  mode: 'history',
-  routes
+	mode: 'history',
+	routes
 })
 
 export default router
