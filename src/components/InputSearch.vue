@@ -11,7 +11,7 @@
 
 
 <script>
-import {mapActions} from "vuex"
+import { mapActions } from "vuex"
 import SVGIcons from "@/components/SVGIcons.vue"
 
 export default {
@@ -52,6 +52,16 @@ export default {
         span {
             margin-right: 0.5rem;
         }
+    }
+    #search {
+        padding: 0.25rem 0.5rem;
+        font-size: 1.1rem;
+        border-radius: 5px;
+        border: 2px solid $secondary_color;
+        border-style: outset;
+        background: $primary_color;
+        outline: none;
+        box-shadow: rgb(171 171 171) 3px 3px 4px 0px inset, rgb(255 255 255) -3px -3px 10px 1px inset;
     }
 }
 

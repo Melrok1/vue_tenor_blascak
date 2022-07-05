@@ -1,11 +1,14 @@
 <template>
     <div class="pictureTemplate">
+        <div class="pictureTemplateHeaderWrapper">
+            <slot name="pictureTemplate_header"/>
+        </div>
         <div class="trentyCollectionWrapper" v-if="images">
             <div v-for="(singleGifObj, index) in images.data.results" :key="index">
                 <div class="gifWrapper">
                     <img 
                         :alt="singleGifObj.content_description" 
-                        @mouseover="selectedImg = index; /* showGif(singleGifObj, index)*/ "
+                        @mouseover="selectedImg = index"
                         @mouseleave="selectedImg = null"
                         :class="{hover: selectedImg === index}"
                         :src="selectedImg === index ? singleGifObj.media[0].gif.url : singleGifObj.media[0].gif.preview" 
@@ -28,11 +31,7 @@ export default {
         selectedImg: null
     }),
     methods: {
-        // showGif(singleGifObj, index) {
-        //     console.log(singleGifObj)
-        //     console.log(index)
-        //     console.log(this.images.data.results[index])
-        // }
+
     }
 };
 </script>
@@ -43,11 +42,18 @@ export default {
 .pictureTemplate {
     max-width: 1200px;
     min-height: 200px;
-    margin: 0 auto;
+    margin: 3rem auto;
     border: 2px solid #d9d9d9;
     border-radius: 5px;
     padding: 0 30px 30px 30px;
-    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 5%), 0 2px 4px 0 rgb(0 0 0 / 8%);
+    box-shadow: $globalBoxShadow;
+    .pictureTemplateHeaderWrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 1rem;
+    }
     .trentyCollectionWrapper {
         line-height: 0;
         column-count: 5;

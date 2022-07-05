@@ -1,33 +1,34 @@
 <template>
-  <div class="home">
-    <h1>Trendy</h1>
-    <PicturesTemplate :images="collection"/>
-  </div>
+	<div class="home">
+		<PicturesTemplate :images="collection">
+			<h1 slot="pictureTemplate_header">Trends</h1>
+		</PicturesTemplate>
+	</div>
 </template>
 
 <script>
-import {mapFields} from "vuex-map-fields"
-import {mapActions} from "vuex"
-import PicturesTemplate from "@/components/PicturesTemplate.vue"
+import { mapFields } from "vuex-map-fields";
+import { mapActions } from "vuex";
+import PicturesTemplate from "@/components/PicturesTemplate.vue";
 
 export default {
-  name: 'HomeView',
-  components: {
-    PicturesTemplate
-  },
-  computed: {
-    ...mapFields("trends", {
-      collection: "collection",
-    }),
-  },
-  methods: {
-    ...mapActions({
-      getTenorTrendy: "trends/retrieveCollection",
-    })
-  },
-  mounted() {
-    this.getTenorTrendy()
-  }
+	name: "HomeView",
+	components: {
+		PicturesTemplate,
+	},
+	computed: {
+		...mapFields("trends", {
+			collection: "collection",
+		}),
+	},
+	methods: {
+		...mapActions({
+			getTenorTrendy: "trends/retrieveCollection",
+		}),
+	},
+	mounted() {
+		this.getTenorTrendy();
+	},
 }
 </script>
 

@@ -1,13 +1,14 @@
 <template>
 	<div class="search">
-		<InputSearch />
-		<PicturesTemplate :images="collection" />
+		<PicturesTemplate :images="collection">
+			<InputSearch slot="pictureTemplate_header"/>
+		</PicturesTemplate>
 	</div>
 </template>
 
 
 <script>
-import {mapFields} from "vuex-map-fields"
+import { mapFields } from "vuex-map-fields"
 import PicturesTemplate from "@/components/PicturesTemplate.vue";
 import InputSearch from "@/components/InputSearch.vue";
 
